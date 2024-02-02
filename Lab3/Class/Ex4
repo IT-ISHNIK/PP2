@@ -1,0 +1,44 @@
+import math
+"""Write the definition of a Point class. Objects from this class should have a:
+
+a method show to display the coordinates of the point
+a method move to change these coordinates
+a method dist that computes the distance between 2 points"""
+class Show:
+    def __init__(self, X , Y):
+        self.x = X
+        self.y = Y
+    def Show(self):
+        print("Coordinate of x:",self.x, "Coordinate of y:",self.y, sep=' ')
+    def Move(self, X_axis, Y_axis, x_change, y_change):
+        if(X_axis == "right"):
+            self.x += x_change
+        elif(X_axis == "left"):
+            self.x-=x_change
+        else:
+            print("YOU SHOULD WRITE <right>, <left>, <down> OR <up>")
+        if(Y_axis == "down"):
+            self.y -=y_change
+        elif(Y_axis == "up"):
+            self.y+=y_change
+        else:
+            print("YOU SHOULD WRITE <right>, <left>, <down> OR <up>")
+
+    def dist(self,newx,newy):
+        self.dis = math.sqrt(pow(self.x - newx , 2) + pow(self.y - newy, 2))
+        print("Distance between two points is", self.dis)
+
+x = int(input("Input coordinate of x: "))
+y = int(input("Input coordinate of y: "))
+txt = Show(x, y)
+txt.Show()
+Xdirection = input("Input direction to move point in x-axis(in lowercase): ")
+Ydirection = input("Input direction to move point in y-axis(in lowercase): ")
+Xchange = int(input("Input length to move point in x-axis: "))
+Ychange = int(input("Input length to move point in y-axis: "))
+txt.Move(Xdirection,Ydirection,Xchange,Ychange)
+newx = int(input("Write coordinates in x-axis to caunt diatance of points: "))
+newy = int(input("Write coordinates in y-axis to caunt diatance of points: "))
+txt.dist(newx,newy)
+
+
