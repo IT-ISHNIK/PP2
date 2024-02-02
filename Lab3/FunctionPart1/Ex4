@@ -1,0 +1,10 @@
+"""You are given list of numbers separated by spaces. Write a function filter_prime which will take list of numbers as an agrument and returns only prime numbers from the list."""
+def filter_prime(ll):
+    lis = []
+    for x in ll:
+        if (x > 1 and (all(x % i != 0 for i in range(2,x))) == True):
+            lis.append(x)
+    print("List with prime nmber: ",lis)
+
+ll = [int(x) for x in input("Input list of numbers seperated by space: ").split(' ')]
+filter_prime(ll)
