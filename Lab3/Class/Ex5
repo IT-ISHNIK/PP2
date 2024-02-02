@@ -1,0 +1,22 @@
+"""Create a bank account class that has attributes owner, balance and two methods deposit and withdraw. Withdrawals may not exceed the available balance. Instantiate your class,
+ make several deposits and withdrawals, and test to make sure the account can't be overdrawn."""
+
+class Accaunt:
+    def __init__(self, own, ball):
+        self.owner = own
+        self.balance = ball
+    def deposit(self, saved):
+        self.depo = saved
+        print("I saved ",self.depo, "money")
+    def withdraw(self, spend):
+        self.withdraw = spend
+        if(self.withdraw > self.balance):
+            print("You spended more money then amount which you current have")
+owner = input("Write your name: ")
+ball = int(input("Write your balance: "))
+acc = Accaunt(owner, ball)
+depo = int(input("How much money you saved: "))
+acc.deposit(depo)
+spend = int(input("You spend: "))
+acc.withdraw(spend)
+        
