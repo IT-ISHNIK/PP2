@@ -1,0 +1,9 @@
+"""Write a program to solve a classic puzzle: We count 35 heads and 94 legs among the chickens and rabbits in a farm. How many rabbits and how many chickens do we have? 
+create function: solve(numheads, numlegs):"""
+def solve(numheads, numlegs):
+    rabbit = (numlegs - 2*numheads)/2
+    chicken = numheads - rabbit
+    print("number of rabbits ", int(rabbit), "and number of chickens is ", int(chicken))
+numlegs = int(input("Input num of legs: "))
+numheads = int(input("Input num of heads: "))
+solve(numheads,numlegs)
