@@ -1,0 +1,9 @@
+"""Write a function that accepts string from user and print all permutations of that string."""
+from itertools import permutations
+from math import factorial
+def change(STR):
+    perm = permutations(STR)
+    for x in perm:
+        print(''.join(x))
+STR = input("Enter a string:")
+change(STR)
