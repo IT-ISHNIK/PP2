@@ -1,0 +1,28 @@
+"""Define a class named Rectangle which inherits from Shape class from task 2. Class instance can be constructed by a length and width.
+ The Rectangle class has a method which can compute the area."""
+class Shape:
+    def __init__(self):
+        self.area = 0
+    def Print(self):
+        print(self.area)
+ 
+class Square(Shape):
+    def __init__(self, LENGTH):
+        super().__init__()
+        self.length = LENGTH
+    def Print(self):
+        print(self.area)
+ 
+class Rectangle(Square):
+    def __init__(self,WIDTH):
+        super().__init__(WIDTH)
+        self.width = WIDTH
+    def Compute(self):
+        self.area = self.width * self.length
+        print(self.area)
+ 
+length = int(input("Input length of rectangle: "))
+width = int(input("Input width of rectangle: "))
+data = Square(length)
+answer = Rectangle(width)
+answer.Compute()
