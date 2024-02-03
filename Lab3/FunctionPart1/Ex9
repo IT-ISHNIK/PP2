@@ -1,0 +1,6 @@
+"""Write a function that computes the volume of a sphere given its radius"""
+def Volume(radius):
+    volume = 4/3 * 3.14 * pow(radius, 3)
+    print("Volume of a given sphere is: ", volume)
+radius = int(input("input the radius of a sphere: "))
+Volume(radius)
