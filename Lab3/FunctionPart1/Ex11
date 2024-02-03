@@ -1,0 +1,10 @@
+"""Write a Python function that checks whether a word or phrase is palindrome or not. Note: A palindrome is word, phrase, 
+or sequence that reads the same backward as forward, e.g., madam"""
+def check(word):
+    for i in range(len(word)//2):
+        if word[i] != word[len(word)-1-i]:
+            print("It is not polindrome")
+            return
+    print("It is polindrome")
+word = input("Write yout word: ")
+check(word)
