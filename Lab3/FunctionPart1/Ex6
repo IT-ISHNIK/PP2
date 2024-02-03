@@ -1,0 +1,4 @@
+"""Write a function that accepts string from user, return a sentence with the words reversed. We are ready -> ready are We"""
+ll = [x for x in input().split(' ')]
+for i in range(len(ll)-1,-1,-1):
+    print(ll[i], end = ' ')
