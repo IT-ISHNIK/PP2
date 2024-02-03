@@ -1,0 +1,38 @@
+"""Write a program able to play the "Guess the number" - game, where the number to be guessed is randomly chosen between 1 and 20. This is how it should work when run in a terminal:
+Hello! What is your name?
+KBTU
+
+Well, KBTU, I am thinking of a number between 1 and 20.
+Take a guess.
+12
+
+Your guess is too low.
+Take a guess.
+16
+
+Your guess is too low.
+Take a guess.
+19
+
+Good job, KBTU! You guessed my number in 3 guesses!"""
+answer = int(input("Choose your number to be guessed between 1 and 20 : "))
+print("Let's start! ")
+name = input("Hello! What is your name? ")
+count = 1
+guess = -1
+def game(answer,guess,count,name):
+    while (guess != answer):
+        if(guess == -1):
+            print("Well, "+ name +", I am thinking of a number between 1 and 20.")
+        guess = int(input("Take a guess. "))
+        if(guess > answer):
+            print("Your answer is too hight.")
+        elif(guess < answer):
+            print("Your answer is too low")
+        elif(guess == answer):
+            print("Good job, "+ name +'!'+" You guessed my number in "+ f'{count}' + " guesses!")
+            return
+        else:
+            print("Take a guess.")
+        count+=1
+game(answer,guess,count,name)
