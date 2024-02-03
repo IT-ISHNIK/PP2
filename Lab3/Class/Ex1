@@ -1,0 +1,13 @@
+"""Define a class which has at least two methods: getString: to get a string from console input printString: to print 
+the string in upper case"""
+class Change:
+    def __init__(self):
+        self.string = ""
+    def getString(self, newstring):
+        self.string = newstring
+    def printString(self):
+        print(self.string.upper())
+DATA = Change()
+s1 = input()
+DATA.getString(s1)
+DATA.printString()
