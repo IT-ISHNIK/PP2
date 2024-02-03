@@ -1,0 +1,8 @@
+"""Create a python file and import some of the functions from the above 13 tasks and try to use them."""
+from FUN import game
+answer = int(input("Choose your number to be guessed between 1 and 20 : "))
+print("Let's start! ")
+name = input("Hello! What is your name? ")
+count = 1
+guess = -1
+game(answer,guess,count,name)
