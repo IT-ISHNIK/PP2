@@ -1,8 +1,0 @@
-#Write a Python program to subtract five days from current date.
-from datetime import *
-x = int(input("Write a day: "))
-if(x - 5 <= 0):
-    y = datetime(2024, 1, abs(5 - x - 31))
-else:
-    y = datetime(2024, 2, x - 5)
-print("Five days ago was", y)
