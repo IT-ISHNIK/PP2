@@ -1,0 +1,11 @@
+#Write a Python program to calculate two date difference in seconds.
+from datetime import *
+date1 = input("Input first data with seconds, like: 2024-02-06 19:18:35")
+date2 = input("Input second data with seconds, like: 2024-02-06 19:18:35")
+datetime1 = datetime.strptime(date1, '%Y-%m-%d %H:%M:%S')
+datetime2 = datetime.strptime(date2, '%Y-%m-%d %H:%M:%S')
+diff = datetime2 - datetime1
+#2023-09-11 11:11:11 
+#2024-01-09 10:14:59 
+difference = diff.total_seconds()
+print("Difference in seconds is",abs(difference))
