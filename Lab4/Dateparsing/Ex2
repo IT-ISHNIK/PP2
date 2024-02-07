@@ -1,0 +1,6 @@
+#Write a Python program to print yesterday, today, tomorrow.
+from datetime import *
+today = datetime.now()
+yesterday = today - timedelta(days=1)
+tomarraw = today + timedelta(days=1)
+print("Yesterday was:",yesterday.strftime('%Y-%m-%d'), "Today is:",today.strftime('%Y-%m-%d'), "Tomarraw will be:", tomarraw.strftime('%Y-%m-%d') )
