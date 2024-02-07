@@ -1,0 +1,5 @@
+#Write a Python program to drop microseconds from datetime.
+from datetime import *
+today = datetime.now()
+print("Right now is:",today)
+print("Today is",today.strftime('%Y-%m-%d'))
