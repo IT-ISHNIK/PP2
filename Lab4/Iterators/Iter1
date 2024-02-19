@@ -1,0 +1,18 @@
+#   a generator that generates the squares of numbers up to some number N.
+class GENERATER:
+    def __init__(self, N):
+        self.N = N
+        self.upper = 0
+    def __iter__(self):
+        return self
+    def __next__(self):
+        self.upper+=1
+        if(self.upper** 2 <= self.N):
+            return self.upper**2
+        else:
+            raise StopIteration
+N = int(input())
+gen = iter(GENERATER(N))
+for x in gen:
+    print(x)
+
