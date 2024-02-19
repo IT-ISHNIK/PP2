@@ -1,0 +1,6 @@
+"""Write a Python program to convert degree to radian."""
+from math import *
+degree = int(input("Write degree value: "))
+radian = degree*(3.14/180)
+print("radian is: ", radian)
+print(radians(degree))
