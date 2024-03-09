@@ -1,10 +1,31 @@
 #Write a Python program to find the sequences of one upper case letter followed by lower case letters.
-from re import *
-with open('data.txt','r', encoding='utf-8') as txt:
-    qwerty = "DSAAlajlgfksdagkj"
-    x = findall(r'\b([A-Z]{1}|[А-Я]{1})([a-z]+|[а-я]+)\b',txt.read())
-    #y = findall(r'\b[A-Z][a-z]+\b',qwerty)
-    if x:
-        print("Yes WE HAVE")
-    else:
-        print('no havent')
+import re
+with open('row.txt', 'r', encoding = "utf-8") as f:
+    text = f.read()
+
+
+print('\n\nFOR snake case!')
+answer1 = re.sub(r'[\W+]', '_' , text)
+print(answer1.lower())
+
+
+print('\n\nFOR camel case!')
+
+def reveRse(text):
+    words = re.findall(r'\b\w+\b' , text)
+    string1 = ""
+    for word in words:
+        pattern = r'\b([a-zA-Z])|\b([а-яА-Я])'
+        if re.search(pattern, word):
+            ex =""
+            s1 = word[0].upper()
+            ex += s1
+            s2 = word[1:].lower()
+            ex += s2
+            string1 += ex
+        else:
+            word = word.lower()
+            string1 += word
+    return string1
+
+print(reveRse(text))
