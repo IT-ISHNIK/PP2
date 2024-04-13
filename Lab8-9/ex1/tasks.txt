@@ -1,0 +1,3 @@
+Adding randomly appearing coins on the road
+Showing the number of collected coins in the top right corner
+Comment your code
