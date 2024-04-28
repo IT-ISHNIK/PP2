@@ -1,0 +1,51 @@
+import psycopg2
+from config import load_config
+
+def update_contact():
+    try:
+        config = load_config()
+        conn = psycopg2.connect(**config)
+        cur = conn.cursor()
+
+        name = input("Input name of the contact to update: ")
+
+        phone_number = input("Input phone number of the contact to update: ")
+
+        new_name = input("Input new name (leave empty to skip): ")
+
+        new_phone_number = input("Input new phone number (leave empty to skip): ")
+
+        # Construct the UPDATE query
+        update_query = "UPDATE PhoneBook SET "
+        update_values = []
+
+        # Check if new name is provided
+        if new_name:
+            update_query += "name = %s, "
+            update_values.append(new_name)
+
+        if new_phone_number:
+            update_query += "PhoneNumber = %s, "
+            update_values.append(new_phone_number)
+
+        update_query = update_query.rstrip(", ")
+
+        update_query += " WHERE name = %s AND PhoneNumber = %s"
+
+        update_values.extend([name, phone_number])
+
+        cur.execute(update_query, update_values)
+
+        if cur.rowcount == 0:
+            print("No matching record found for the provided criteria.")
+        else:
+            conn.commit()
+            print("Data updated successfully.")
+    except (psycopg2.DatabaseError, Exception) as error:
+        print(error)
+    finally:
+        cur.close()
+        conn.close()
+
+if __name__ == '__main__':
+    update_contact()

@@ -1,0 +1,28 @@
+import psycopg2
+from config import load_config
+import traceback
+
+def connect():
+    connection = None 
+    try:
+        params = load_config()  # Call load_config() function to get database parameters
+        print('Connection parameters:', params)  # Print the loaded parameters
+        print('Attempting connection to postgres...')
+        connection = psycopg2.connect(**params)
+
+        crsr = connection.cursor()
+        print("PostgreSQL database version: ")
+        crsr.execute('SELECT version()')
+        db_version = crsr.fetchone()
+        print(db_version)
+        crsr.close()
+    except(Exception, psycopg2.DatabaseError) as error:
+        print("Error:", error)  # Print the error message
+        traceback.print_exc()  # Print traceback information
+    finally:
+        if connection is not None:
+            connection.close()
+            print("Database connection terminated")
+
+if __name__ == "__main__":
+    connect()
